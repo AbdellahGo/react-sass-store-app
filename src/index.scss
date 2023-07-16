@@ -1,0 +1,14 @@
+@use './Scss-Global-style/varibels' as *;
+
+@use './Scss-Global-style/global-style';
+@use './Scss-Global-style/container';
+
+
+// sections
+@use './Components/header/header';
+@use './Components/home/home';
+@use './Components/papularProducts/papularProducts';
+@use './Components/productCategory/productCategory';
+@use './Components/lastNews/lastNews';
+@use './Components/footer/footer';
+@use './app'

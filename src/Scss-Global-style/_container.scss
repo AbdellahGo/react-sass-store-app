@@ -1,0 +1,18 @@
+@use './varibels' as *;
+
+.container {
+    width: 100%;
+    padding: 0px 15px;
+    margin: 0 auto;
+    @media (#{$min-medium}) {
+        width: 720px;
+    }
+    @media (#{$min-large}) {
+        width: 960px;
+    }
+    @media (#{$min-x-Large})  {
+        width: 1140px;
+    }
+}
+
+

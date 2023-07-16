@@ -1,0 +1,20 @@
+/*
+    mixin prefixer
+*/
+
+@mixin prefixer($property, $value, $prefixes: ()) {
+    #{$property}: $value;
+    @each $prefix in $prefixes {
+        #{'-' + $prefix + '-' + $property}: $value;
+    }
+}
+
+
+/*
+    mixin grid
+*/
+
+@mixin grid($width) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($width, 1fr));
+}

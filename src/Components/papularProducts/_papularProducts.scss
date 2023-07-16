@@ -1,0 +1,74 @@
+@use '../../Scss-Global-style/mixins' as *;
+@use '../../Scss-Global-style/varibels' as *;
+
+
+
+.products {
+    margin-top: 40px;
+    .products-parent {
+        h3 {
+            font: {
+                size: $medium-size;
+                weight: $weight3;
+            }
+            margin: auto;
+            width: fit-content;
+            color: $text-color2;
+            @media (#{$max-x-Small}) {
+                font-size: $small-size;
+            }
+        }
+        button {
+            width: 140px;
+            display: block;
+            margin: 40px auto 0; 
+            background-color: #bdefd7;
+            padding: 15px;
+            font-size: $small-size;
+            font-weight: $weight3;
+            @include prefixer(border-radius, 40px, ('webkit', 'moz', 'o', 'ms'));
+            @include prefixer(transition, .3s, ('webkit', 'moz', 'o', 'ms'));
+            &:hover {
+                background-color: $hover-color;
+                color: $text-color2;
+            }
+        }
+        .products-list {
+            @include grid(250px);
+            gap: 20px;
+            margin-top: 40px;
+
+            div {
+                text-align: center;
+                background-color: #ccc;
+                padding: 20px;
+                @include prefixer(border-radius, 5px, ('webkit', 'moz', 'o', 'ms'));
+                img {
+                    width: 100%;
+                    box-shadow: 0 0 10px 5px #888;
+                }
+                h4 {
+                    cursor: pointer;
+                    margin-top: 15px;
+                    font-size: $x-small-size2;
+                    color: $dark-color;
+                    &:hover {
+                        color: $hover-color;
+                    }
+                }
+                .price {
+                    display: block;
+                    margin-top: 10px;
+                    font-size: $small-size;
+                    font-weight: $weight3;
+                }
+                div {
+                    margin-top: 10px;
+                    font-size: $x-small-size2;
+                    padding: 0;
+                    color: #f2b03d;
+                }
+            }
+        }
+    }
+}

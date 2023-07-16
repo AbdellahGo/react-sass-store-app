@@ -1,0 +1,102 @@
+@use '../../Scss-Global-style/mixins' as *;
+@use '../../Scss-Global-style/varibels' as *;
+
+
+.last-news {
+    margin-top: 40px;
+
+    .news-parent {
+        h3 {
+            font: {
+                size: $medium-size;
+                weight: $weight3;
+            }
+
+            margin: auto;
+            width: fit-content;
+            color: $text-color2;
+
+            @media (#{$max-x-Small}) {
+                font-size: $small-size;
+            }
+        }
+
+        button {
+            width: 160px;
+            display: block;
+            margin: 40px auto 0;
+            background-color: #bdefd7;
+            padding: 15px;
+            font-size: $small-size;
+            font-weight: $weight3;
+            @include prefixer(border-radius, 40px, ('webkit', 'moz', 'o', 'ms'));
+            @include prefixer(transition, .3s, ('webkit', 'moz', 'o', 'ms'));
+
+            &:hover {
+                background-color: $hover-color;
+                color: $text-color2;
+            }
+        }
+
+        .news-list {
+            @include grid(250px);
+            gap: 20px;
+            margin-top: 40px;
+
+            .news {
+                background-color: #ccc;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 300px;
+                    object-fit: cover;
+                }
+
+                .content {
+                    padding: 20px;
+
+                    h4:hover,
+                    span:first-of-type:hover {
+                        color: $hover-color;
+                    }
+
+                    h4,
+                    p,
+                    span:last-of-type {
+                        margin-top: 15px;
+                    }
+
+                    p,
+                    span {
+                        display: block;
+                        color: #777;
+                        font-weight: $weight2;
+                    }
+
+                    span:first-of-type {
+                        font-size: $xx-small-size;
+                        cursor: pointer;
+                    }
+
+                    h4 {
+                        cursor: pointer;
+                        font-size: $small-size;
+                        font-weight: $weight3;
+                        color: $text-color3;
+                        line-height: 24px;
+                    }
+
+                    p {
+                        font-size: $x-small-size2;
+                        line-height: 26px;
+                    }
+
+                    span:last-of-type {
+                        font-size: $x-small-size2;
+                    }
+                }
+            }
+        }
+    }
+}

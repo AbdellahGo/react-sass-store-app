@@ -1,0 +1,88 @@
+@use '../../Scss-Global-style/varibels' as *;
+
+.home {
+    margin-top: 40px;
+    .home-parent {
+        position: relative;
+        background-color: red;
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .category {
+            width: fit-content;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 10px;
+            border-left: 2px solid $hover-color;
+            @media (#{$max-x-Small}) {
+                top: 20px;
+            }
+
+            span {
+                width: 100%;
+                font-size: $xx-small-size;
+                color: $hover-color;
+            }
+        }
+
+        .product-name {
+            width: min-content;
+            position: absolute;
+            font-size: $xx-large-size;
+            font-weight: $weight3;
+            color: $text-color3;
+            line-height: 62px;
+            bottom: 100px;
+            left: 50px;
+
+            @media (#{$max-medium}) {
+                bottom: 100px;
+                font-size: $large-size;
+                line-height: 40px;
+            }
+
+            @media (#{$max-small}) {
+                bottom: 70px;
+            }
+
+            @media (#{$max-x-Small}) {
+                bottom: 20px;
+                font-size: $normal-size;
+                line-height: 26px;
+            }
+        }
+
+        .slider-switch {
+            width: fit-content;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 30px;
+            gap: 10px;
+            position: absolute;
+            bottom: 50px;
+            right: 0;
+            @media (#{$max-x-Small}) {
+                bottom: 20px;
+            }
+
+            li {
+                font-size: $small-size;
+                color: $text-color;
+                font-weight: $weight3;
+                border-bottom: 2px solid $text-color;
+
+                &:first-child {
+                    color: $dark-color;
+                    border-bottom-color: $dark-color;
+                }
+            }
+        }
+    }
+
+}

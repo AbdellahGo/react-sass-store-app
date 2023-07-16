@@ -1,0 +1,163 @@
+@use '../../Scss-Global-style/varibels' as *;
+@use '../../Scss-Global-style/mixins' as *;
+
+
+footer {
+    margin-top: 40px;
+    background-color: #ccc;
+    // &,
+    // * {
+    //     outline: 1px dotted red;
+    // }
+
+    .footer-parent {
+        display: flex;
+        gap: 20px;
+        padding: 20px 0;
+
+        @media (#{$max-medium}) {
+            flex-direction: column;
+        }
+
+        h4 {
+            font-size: $x-small-size2;
+            font-weight: $weight3;
+            color: $text-color3;
+            margin-top: 15px;
+        }
+
+        ul {
+            li:first-child {
+                margin-top: 35px;
+            }
+
+            li {
+                cursor: pointer;
+                margin-top: 20px;
+                font-size: $x-small-size2;
+                font-weight: $weight2;
+                color: #777;
+
+                &:hover {
+                    color: $hover-color
+                }
+            }
+        }
+        
+        .about {
+            width: 35%;
+            h1 {
+                font-size: 36px;
+                color: $text-color3;
+            }
+
+            p {
+                font-size: $xx-small-size;
+                line-height: 25px;
+                color: #777;
+                margin-top: 15px;
+            }
+
+            .media {
+                display: flex;
+                gap: 15px;
+                margin-top: 15px;
+
+                a i {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 25px;
+                    height: 25px;
+                    font-size: $x-small-size2;
+                    color: #777;
+                    background-color: $input-icon-bg-color;
+                    @include prefixer(border-radius, 50%, ('webkit', 'moz', 'o', 'ms'));
+
+                }
+            }
+        }
+
+        .shop {
+            width: 15%;
+        }
+
+        .help {
+            width: 15%;
+
+        }
+
+        .news-letter {
+            width: 35%;
+
+            .sub {
+                display: flex;
+                align-items: center;
+                margin-top: 35px;
+                @include prefixer(border-radius, 20px, ('webkit', 'moz', 'o', 'ms'));
+                overflow: hidden;
+
+                input,
+                button {
+                    font-size: $xx-small-size;
+                    font-weight: $weight3;
+                    padding: 10px;
+                    background-color: $input-icon-bg-color;
+                }
+
+                input {
+                    width: 70%;
+                    color: #777;
+                }
+
+                button {
+                    width: 30%;
+                    color: $hover-color;
+                }
+            }
+
+            p {
+                font-size: $xx-small-size;
+                line-height: 25px;
+                color: #777;
+                margin-top: 30px;
+            }
+        }
+        .about, .shop, .help, .news-letter {
+            @media (#{$max-medium}) {
+                width: 100%;
+                padding: 20px 0;
+                &:not(.about) {
+                    border-top: 1px solid $dark-color;
+
+                }
+            }
+        }
+    }
+
+    .copy-right {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        border-top: 1px solid $dark-color;
+        padding: 20px 0;
+        color: #777;
+        font-size: $xx-small-size;
+        @media (#{$max-x-Small}) {
+            flex-direction: column;
+        }
+        ul {
+            li {
+                display: inline-block;
+                &:not(:last-child) {
+                    margin-right: 20px;
+                }
+                @media (#{$max-x-Small}) {
+                    display: block;
+                    margin-right: unset;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}

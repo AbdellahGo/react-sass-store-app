@@ -1,0 +1,145 @@
+@use '../../Scss-Global-style/mixins' as *;
+@use '../../Scss-Global-style/varibels' as *;
+
+
+header {
+    .header-parent {
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $text-color2;
+
+        @media (#{$max-medium}) {
+            align-items: flex-start;
+        }
+
+        .logo {
+
+            h1 {
+                font-size: $large-size;
+            }
+        }
+
+        .menu {
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+
+            @media (#{$max-medium}) {
+                width: 50%;
+                align-items: flex-end;
+                justify-content: flex-start;
+                flex-direction: column;
+                padding: 10px 15px;
+            }
+
+            @media (#{$max-x-Small}) {
+                width: 100%;
+            }
+
+            .show-menu {
+                font-size: $normal-size;
+                color: $input-icon-bg-color;
+                background-color: unset;
+                display: none;
+
+                @media (#{$max-medium}) {
+                    display: block;
+                }
+            }
+
+            .search {
+                background-color: aqua;
+                width: 40%;
+                display: flex;
+                overflow: hidden;
+                @include prefixer(border-radius, 20px, ('webkit', 'moz', 'o', 'ms'));
+                @media (#{$min-large}) {
+                    display: flex !important;
+                }
+
+                @media (#{$max-medium}) {
+                    display: none;
+                    width: 100%;
+                    margin-top: 15px;
+                }
+
+                input {
+                    width: 85%;
+                    padding: 10px;
+                    font-size: $x-small-size2;
+                    font-weight: $weight3;
+                    color: black;
+                }
+
+                button {
+                    width: 15%;
+                    padding: 10px;
+                    display: block;
+                    background-color: $hover-color;
+
+                    i {
+                        color: $input-icon-bg-color;
+                        font-size: $small-size;
+                    }
+                }
+            }
+
+            ul {
+                width: fit-content;
+                display: flex;
+
+                @media (#{$min-large}) {
+                    display: flex !important;
+                }
+
+                @media (#{$max-medium}) {
+                    display: none;
+                    flex-direction: column;
+                    width: 100%;
+                    margin-top: 15px;
+                }
+
+                li {
+                    font-size: $small-size;
+                    padding: 5px 10px;
+                    cursor: pointer;
+                    position: relative;
+                    @include prefixer(transition, 0.3s, ('webkit', 'moz', 'o', 'ms'));
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 0;
+                        height: 0;
+                        bottom: 0;
+                        left: 0;
+                        background-color: white;
+                        @include prefixer(transition, 0.3s, ('webkit', 'moz', 'o', 'ms'));
+                    }
+
+                    &:hover::after {
+                        width: 100%;
+                        height: 1px;
+                    }
+
+                    &:hover {
+                        @include prefixer(transform, translateY(-5px), ('webkit', 'moz', 'o', 'ms'));
+                    }
+                }
+            }
+        }
+
+        .active {
+            @media (#{$max-medium}) {
+                height: 100vh;
+                position: fixed;
+                z-index: 10;
+                top: 0;
+                right: 0;
+                background-color: $dark-color
+            }
+        }
+    }
+}

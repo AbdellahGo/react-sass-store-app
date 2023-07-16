@@ -1,0 +1,21 @@
+@use './Scss-Global-style/varibels' as *;
+@use './Scss-Global-style/mixins' as *;
+
+.app {
+    position: relative;
+    .top {
+        width: 45px;
+        height: 45px;
+        font-size: $normal-size;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include prefixer(border-radius, 50%, ("webkit", "moz", "o", "ms"));
+        border: 1px solid $dark-color
+        color: $dark-color;
+        background-color: $input-icon-bg-color;
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+    }
+}
